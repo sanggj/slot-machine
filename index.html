@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="default-theme">
+    <button class="settings-btn" onclick="openSettings()">Settings</button>
+    <div id="warning"></div>
+    <div class="slot-machine">
+        <h1>Fun Slot Machine</h1>
+        <div id="balance">Balance: 1000 coins</div>
+        <div class="reels">
+            <div class="reel" id="reel1">🍒</div>
+            <div class="reel" id="reel2">🍋</div>
+            <div class="reel" id="reel3">🍊</div>
+        </div>
+        <button id="spinButton" onclick="spin()">Spin</button>
+        <div id="message"></div>
+    </div>
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeSettings()">X</button>
+            <h2>Settings</h2>
+            <label for="themeSelect">Theme:</label>
+            <select id="themeSelect" onchange="changeTheme()">
+                <option value="default">Default Theme</option>
+                <option value="dark">Dark Neon</option>
+                <option value="tropical">Tropical</option>
+            </select>
+            <label for="betAmount">Bet Amount (coins):</label>
+            <input type="number" id="betAmount" value="10" min="1" max="9999">
+            <label for="addCoinsAmount">Add Coins:</label>
+            <input type="number" id="addCoinsAmount" value="500" min="1" max="9999">
+            <button onclick="addCoins()">Add Coins</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
